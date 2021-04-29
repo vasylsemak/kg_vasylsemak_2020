@@ -1,16 +1,25 @@
 const converter = require('number-to-words'); /* npm package */
 const commandLineArgs = process.argv.slice(2);
 
+// Split every number into digits array
+// Convert digits to strings using toWords() method
+// Upper case every first letter of the string
+// Join every string DIGIT of inner array with empty space
+
 function integersToStrings(args) {
   const numbersArray = [...args];
 
-  return numbersArray.map(num => {
-    // Convert every number to digits array
-    const digitsArr = num.split('').map(digit => converter.toWords(digit))
+  const numbersStr = numbersArray.map(num => {
+    const stringsArr = num.split('').map(digit => {
+      const digitWorld = converter.toWords(digit);
 
-    console.log('NUM ->', digitsArr)
+      return digitWorld[0].toUpperCase() + digitWorld.slice(1);
+    });
+
+    return stringsArr.join('');
   })
 
+  console.log('NumsStr ->', numbersStr);
 }
 
 integersToStrings(commandLineArgs);
