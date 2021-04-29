@@ -1,3 +1,6 @@
-const commandLineArgs = process.argv.slice(2)
+const converter = require('number-to-words');
 
-console.log(commandLineArgs)
+let x = converter.toWords(13); // => “thirteen”
+const commandLineArgs = process.argv.slice(2);
+
+console.log(x, commandLineArgs);
