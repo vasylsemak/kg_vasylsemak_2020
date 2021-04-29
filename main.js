@@ -5,6 +5,7 @@ const commandLineArgs = process.argv.slice(2);
 // Convert digits to strings using toWords() method
 // Upper case every first letter of the string
 // Join every string DIGIT of inner array with no space
+// Join every string NUMBER into String of Numbers
 
 function integersToStrings(args) {
   const numbersArray = [...args];
